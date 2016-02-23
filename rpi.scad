@@ -8,8 +8,12 @@ METALIC = "silver";
 
 module ethernet_port ()
 	{
+	offset = [LENGTH - 20, 1.5, HEIGHT];
+	dimensions = [21.2,16,13.3];
+
 	color(METALIC)
-	translate([LENGTH-20,1.5,HEIGHT]) cube([21.2,16,13.3]); 
+		translate(offset) 
+			cube(dimensions); 
 	}
 
 module usb ()
