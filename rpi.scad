@@ -6,21 +6,23 @@ HEIGHT = 1.5;
 
 METALIC = "silver";
 
+PORT_LENGTH = 21.2;
+PORT_WIDTH = 16;
+PORT_HEIGHT = 13.3;
+
+function dimensions () = [PORT_LENGTH,PORT_WIDTH,PORT_HEIGHT];
+
 module ethernet_port ()
 	{
-	PORT_LENGTH = 21.2;
-	PORT_WIDTH = 16;
-	PORT_HEIGHT = 13.3;
+
 	ledge = 1.2;
 	offset_x = LENGTH - PORT_LENGTH + ledge;
 	pcb_margin = 1.5;
-
 	offset = [offset_x, pcb_margin, HEIGHT];
-	dimensions = [PORT_LENGTH,PORT_WIDTH,PORT_HEIGHT];
 
 	color(METALIC)
 		translate(offset) 
-			cube(dimensions); 
+			cube(dimensions()); 
 	}
 
 module usb ()
