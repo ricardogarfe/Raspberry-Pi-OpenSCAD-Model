@@ -12,13 +12,14 @@ PORT_HEIGHT = 13.3;
 
 function dimensions () = [PORT_LENGTH,PORT_WIDTH,PORT_HEIGHT];
 
+function offset_x (ledge) = LENGTH - PORT_LENGTH + ledge;
+
 module ethernet_port ()
 	{
 
 	ledge = 1.2;
-	offset_x = LENGTH - PORT_LENGTH + ledge;
 	pcb_margin = 1.5;
-	offset = [offset_x, pcb_margin, HEIGHT];
+	offset = [offset_x (ledge), pcb_margin, HEIGHT];
 
 	color(METALIC)
 		translate(offset) 
