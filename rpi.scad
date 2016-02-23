@@ -4,9 +4,11 @@ WIDTH = 56;
 LENGTH = 85;
 HEIGHT = 1.5;
 
+METALIC = "silver";
+
 module ethernet_port ()
 	{
-	color("silver")
+	color(METALIC)
 	translate([LENGTH-20,1.5,HEIGHT]) cube([21.2,16,13.3]); 
 	}
 
