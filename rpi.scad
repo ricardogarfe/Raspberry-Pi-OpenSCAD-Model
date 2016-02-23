@@ -4,14 +4,11 @@ WIDTH = 56;
 LENGTH = 85;
 HEIGHT = 1.5;
 
-
-module ethernet ()
+module ethernet_port ()
 	{
-	//ethernet port
 	color("silver")
 	translate([LENGTH-20,1.5,HEIGHT]) cube([21.2,16,13.3]); 
 	}
-
 
 module usb ()
 	{
@@ -127,7 +124,7 @@ module led()
 module rpi ()
 	{
 		pcb ();
-		ethernet ();
+		ethernet_port ();
 		usb (); 
 		composite (); 
 		audio (); 
