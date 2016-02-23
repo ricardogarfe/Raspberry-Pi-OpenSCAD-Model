@@ -10,7 +10,7 @@ PORT_LENGTH = 21.2;
 PORT_WIDTH = 16;
 PORT_HEIGHT = 13.3;
 
-function dimensions () = [PORT_LENGTH,PORT_WIDTH,PORT_HEIGHT];
+ETHERNET_DIMENSIONS = [PORT_LENGTH,PORT_WIDTH,PORT_HEIGHT];
 
 function offset_x (ledge) = LENGTH - PORT_LENGTH + ledge;
 
@@ -23,7 +23,7 @@ module ethernet_port ()
 
 	color(METALIC)
 		translate(offset) 
-			cube(dimensions()); 
+			cube(ETHERNET_DIMENSIONS); 
 	}
 
 module usb ()
