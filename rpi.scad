@@ -11,9 +11,12 @@ ETHERNET_WIDTH = 16;
 ETHERNET_HEIGHT = 13.3;
 ETHERNET_DIMENSIONS = [ETHERNET_LENGTH,ETHERNET_WIDTH,ETHERNET_HEIGHT];
 
-USB_DIMENSIONS = [17.3,13.3,16];
+USB_LENGTH = 17.3;
+USB_DIMENSIONS = [USB_LENGTH,13.3,16];
 
-function offset_x (ledge) = LENGTH - ETHERNET_LENGTH + ledge;
+function offset_x (ledge) = new_offset_x (ledge, ETHERNET_LENGTH);
+
+function new_offset_x (ledge, port_length) = LENGTH - port_length + ledge;
 
 module ethernet_port ()
 	{
@@ -30,7 +33,7 @@ module ethernet_port ()
 module usb_port ()
 	{
 	ledge = 8.5;
-	offset_x = LENGTH - 17.3 + ledge;
+	offset_x = LENGTH - USB_LENGTH + ledge;
 
 	color(METALIC)
 		translate([offset_x,25,HEIGHT])
