@@ -121,7 +121,7 @@ module gpio ()
 	offset_y = -50;
 
 	offset = [offset_x, offset_y, HEIGHT];
-	
+
 	rotate(TILT)
 		translate(offset)
 			off_pin_header(rows = 13, cols = 2);
@@ -129,9 +129,9 @@ module gpio ()
 
 module hdmi ()
 	{
-	color ("silver")
-	translate ([37.1,-1,HEIGHT])
-	cube([15.1,11.7,8-HEIGHT]);
+	color (METALIC)
+		translate ([37.1,-1,HEIGHT])
+			cube([15.1,11.7,8-HEIGHT]);
 	}
 
 module power ()
