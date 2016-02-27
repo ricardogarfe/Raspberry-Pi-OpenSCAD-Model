@@ -13,6 +13,7 @@ FINE = .5;
 METALLIC = "silver";
 CHROME = [.9,.9,.9];
 BLUE = [.4,.4,.95];
+BLACK = [0,0,0];
 
 ETHERNET_LENGTH = 21.2;
 ETHERNET_WIDTH = 16;
@@ -151,9 +152,9 @@ module power ()
 
 module sd ()
 	{
-	color ([0,0,0])
-	translate ([0.9, 15.2,-5.2+HEIGHT ])
-	cube ([16.8, 28.5, 5.2-HEIGHT]);
+	color (BLACK)
+		translate ([0.9, 15.2,-5.2+HEIGHT ])
+			cube ([16.8, 28.5, 5.2-HEIGHT]);
 
 	color ([.2,.2,.7])
 	translate ([-17.3,17.7,-2.9])
