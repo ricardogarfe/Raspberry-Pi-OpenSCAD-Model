@@ -5,6 +5,7 @@ LENGTH = 85;
 HEIGHT = 1.5;
 
 METALIC = "silver";
+CHROME = [.9,.9,.9];
 
 ETHERNET_LENGTH = 21.2;
 ETHERNET_WIDTH = 16;
@@ -48,7 +49,7 @@ module composite_jack () {
 
 	translate([5,19,8])
 		rotate([90,0,0])
-			color([.9,.9,.9])
+			color(CHROME)
 				cylinder(h = 9.3, r = 4.15, $fs=fine);
 }
 
