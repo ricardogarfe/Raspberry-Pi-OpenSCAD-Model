@@ -163,13 +163,16 @@ module sd_slot () {
 			cube (dimensions);
 }
 
-module sd ()
-	{
-	sd_slot();
-
+module sd_card () {
 	color ([.2,.2,.7])
 	translate ([-17.3,17.7,-2.9])
 	cube ([32, 24, 2] );
+}
+
+module sd ()
+	{
+	sd_slot();
+	sd_card();
 	}
 
 module mhole ()
