@@ -77,12 +77,13 @@ module audio_jack ()
 	{
 	diameter = 6.7;
 	radius = radius(diameter);
-
-	translate([LENGTH-26,WIDTH-11.5,HEIGHT])
+	block_with = 11.5;
+	
+	translate([LENGTH-26, WIDTH - block_with, HEIGHT])
 		{
 		color(BLUE)
-			cube([12.1,11.5,10.1]);
-				translate([6,11.5,10.1-radius])
+			cube([12.1, block_with, 10.1]);
+				translate([6, block_with, 10.1 - radius])
 					rotate(LEFT)
 						color(BLUE)
 							cylinder(h = 3.5, r = radius, $fs=FINE);
