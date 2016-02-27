@@ -53,8 +53,11 @@ module composite_jack () {
 module composite_port ()
 	{
 	
-	offset_x = 41.4;	
-	translate([offset_x, WIDTH - 12,HEIGHT])
+	offset_x = 41.4;
+	pcb_margin = 12;
+	offset_y = WIDTH - pcb_margin;
+
+	translate([offset_x, offset_y, HEIGHT])
 		{
 		composite_block();
 		composite_jack();
