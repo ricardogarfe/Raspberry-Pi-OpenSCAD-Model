@@ -3,6 +3,7 @@ use <pin_headers.scad>;
 WIDTH = 56;
 LENGTH = 85;
 HEIGHT = 1.5;
+RIGHT = [90,0,0];
 
 METALIC = "silver";
 CHROME = [.9,.9,.9];
@@ -48,7 +49,7 @@ module composite_jack () {
 	fine = .5;
 
 	translate([5,19,8])
-		rotate([90,0,0])
+		rotate(RIGHT)
 			color(CHROME)
 				cylinder(h = 9.3, r = 4.15, $fs=fine);
 }
