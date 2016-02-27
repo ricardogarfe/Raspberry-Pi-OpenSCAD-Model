@@ -71,17 +71,21 @@ module composite_port ()
 		}
 	}
 
+function radius(diameter) = diameter / 2;
+
 module audio_jack ()
 	{
+	diameter = 6.7;
+	radius = radius(diameter);
 
 	translate([LENGTH-26,WIDTH-11.5,HEIGHT])
 		{
 		color(BLUE)
 			cube([12.1,11.5,10.1]);
-				translate([6,11.5,10.1-(6.7/2)])
+				translate([6,11.5,10.1-radius])
 					rotate(LEFT)
 						color(BLUE)
-							cylinder(h = 3.5, r = 6.7/2, $fs=FINE);
+							cylinder(h = 3.5, r = radius, $fs=FINE);
 		}
 	}
 
