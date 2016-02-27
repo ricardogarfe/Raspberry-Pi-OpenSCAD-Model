@@ -1,5 +1,8 @@
 use <pin_headers.scad>;
 
+NEGATIVE_FACTOR = -1;
+FINE = .5;
+
 WIDTH = 56;
 LENGTH = 85;
 HEIGHT = 1.5;
@@ -8,7 +11,6 @@ RIGHT = [90,0,0];
 LEFT = [-90,0,0];
 TILT = [0,0,180];
 
-FINE = .5;
 
 METALLIC = "silver";
 CHROME = [.9,.9,.9];
@@ -151,14 +153,16 @@ module power ()
 	}
 
 module sd_slot () {
+	slot_height = 5.2;
+
 	offset_x = 0.9;
 	offset_y = 15.2;
-	offset_z = 5.2 - HEIGHT;
+	offset_z = (slot_height * NEGATIVE_FACTOR) + HEIGHT;
 
-	dimensions = [16.8, 28.5, 5.2 - HEIGHT];
+	dimensions = [16.8, 28.5, slot_height - HEIGHT];
 
 	color (BLACK)
-		translate ([offset_x, offset_y, -5.2 + HEIGHT ])
+		translate ([offset_x, offset_y, - slot_height + HEIGHT ])
 			cube (dimensions);
 }
 
