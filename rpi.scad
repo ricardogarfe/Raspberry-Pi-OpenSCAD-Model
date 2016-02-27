@@ -77,10 +77,13 @@ module audio_jack ()
 	{
 	diameter = 6.7;
 	radius = radius(diameter);
+
 	block_with = 11.5;
 	block_height = 10.1;
-	
-	translate([LENGTH-26, WIDTH - block_with, HEIGHT])
+
+	offset_x = 59;
+
+	translate([offset_x, WIDTH - block_with, HEIGHT])
 		{
 		color(BLUE)
 			cube([12.1, block_with, block_height]);
