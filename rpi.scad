@@ -140,8 +140,11 @@ module hdmi ()
 
 module power ()
 	{
+	offset_x = -0.8;
+	offset_y = 3.8;
+
 	color(METALLIC)
-		translate ([-0.8,3.8,HEIGHT])
+		translate ([offset_x, offset_y, HEIGHT])
 			cube ([5.6, 8,4.4-HEIGHT]);
 	}
 
