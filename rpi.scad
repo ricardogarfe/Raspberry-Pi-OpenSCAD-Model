@@ -78,8 +78,10 @@ module audio_jack ()
 	diameter = 6.7;
 	radius = radius(diameter);
 
+	block_length = 12.1;
 	block_with = 11.5;
 	block_height = 10.1;
+	block_dimensions = [block_length, block_with, block_height];
 
 	offset_x = 59;
 	offset = [offset_x, WIDTH - block_with, HEIGHT];
@@ -87,8 +89,8 @@ module audio_jack ()
 	translate(offset)
 		{
 		color(BLUE)
-			cube([12.1, block_with, block_height]);
-				translate([6, block_with, block_height - radius])
+			cube(block_dimensions);
+				translate([block_length / 2, block_with, block_height - radius])
 					rotate(LEFT)
 						color(BLUE)
 							cylinder(h = 3.5, r = radius, $fs=FINE);
