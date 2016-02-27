@@ -10,7 +10,7 @@ TILT = [0,0,180];
 
 FINE = .5;
 
-METALIC = "silver";
+METALLIC = "silver";
 CHROME = [.9,.9,.9];
 BLUE = [.4,.4,.95];
 
@@ -31,7 +31,7 @@ module ethernet_port ()
 	pcb_margin = 1.5;
 	offset = [offset_x(ledge, ETHERNET_LENGTH), pcb_margin, HEIGHT];
 
-	color(METALIC)
+	color(METALLIC)
 		translate(offset) 
 			cube(ETHERNET_DIMENSIONS); 
 	}
@@ -41,7 +41,7 @@ module usb_port ()
 	ledge = 8.5;
 	offset_y = 25;
 
-	color(METALIC)
+	color(METALLIC)
 		translate([offset_x(ledge, USB_LENGTH), offset_y, HEIGHT])
 			cube(USB_DIMENSIONS);
 	}
@@ -129,7 +129,7 @@ module gpio ()
 
 module hdmi ()
 	{
-	color (METALIC)
+	color (METALLIC)
 		translate ([37.1,-1,HEIGHT])
 			cube([15.1,11.7,8-HEIGHT]);
 	}
