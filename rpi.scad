@@ -153,10 +153,11 @@ module power ()
 module sd_slot () {
 	offset_x = 0.9;
 	offset_y = 15.2;
+	dimensions = [16.8, 28.5, 5.2 - HEIGHT];
 
 	color (BLACK)
 		translate ([offset_x, offset_y, -5.2 + HEIGHT ])
-			cube ([16.8, 28.5, 5.2 - HEIGHT]);
+			cube (dimensions);
 }
 
 module sd ()
