@@ -15,7 +15,7 @@ METALLIC = "silver";
 CHROME = [.9,.9,.9];
 BLUE = [.4,.4,.95];
 BLACK = [0,0,0];
-DARK_BLUE = [.2,.2,.7]:
+DARK_BLUE = [.2,.2,.7];
 
 ETHERNET_LENGTH = 21.2;
 ETHERNET_WIDTH = 16;
@@ -164,9 +164,11 @@ module sd_slot () {
 }
 
 module sd_card () {
+	offset = [-17.3, 17.7, -2.9];
+
 	color (DARK_BLUE)
-		translate ([-17.3,17.7,-2.9])
-			cube ([32, 24, 2] );
+		translate (offset)
+			cube ([32, 24, 2]);
 }
 
 module sd ()
