@@ -3,8 +3,10 @@ use <pin_headers.scad>;
 WIDTH = 56;
 LENGTH = 85;
 HEIGHT = 1.5;
+
 RIGHT = [90,0,0];
 LEFT = [-90,0,0];
+TILT = [0,0,180];
 
 FINE = .5;
 
@@ -114,10 +116,9 @@ module audio_jack ()
 
 module gpio ()
 	{
-	//headers
-	rotate([0,0,180])
-	translate([-1,-WIDTH+6,HEIGHT])
-	off_pin_header(rows = 13, cols = 2);
+	rotate(TILT)
+		translate([-1,-WIDTH+6,HEIGHT])
+			off_pin_header(rows = 13, cols = 2);
 	}
 
 module hdmi ()
