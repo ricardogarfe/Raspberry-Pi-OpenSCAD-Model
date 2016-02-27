@@ -73,6 +73,8 @@ module composite_port ()
 
 function radius(diameter) = diameter / 2;
 
+function half(dimension) = dimension / 2;
+
 module audio_jack ()
 	{
 	diameter = 6.7;
@@ -90,7 +92,7 @@ module audio_jack ()
 		{
 		color(BLUE)
 			cube(block_dimensions);
-				translate([block_length / 2, block_with, block_height - radius])
+				translate([half(block_length), block_with, block_height - radius])
 					rotate(LEFT)
 						color(BLUE)
 							cylinder(h = 3.5, r = radius, $fs=FINE);
