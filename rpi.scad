@@ -131,10 +131,11 @@ module hdmi ()
 	{
 	offset_x = 37.1;
 	offset_y = -1;
+	dimensions = [15.1,11.7,8-HEIGHT];
 
 	color (METALLIC)
 		translate ([offset_x, offset_y, HEIGHT])
-			cube([15.1,11.7,8-HEIGHT]);
+			cube(dimensions);
 	}
 
 module power ()
