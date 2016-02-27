@@ -5,6 +5,8 @@ LENGTH = 85;
 HEIGHT = 1.5;
 RIGHT = [90,0,0];
 
+FINE = .5;
+
 METALIC = "silver";
 CHROME = [.9,.9,.9];
 
@@ -46,12 +48,11 @@ module composite_block () {
 }
 
 module composite_jack () {
-	fine = .5;
 
 	translate([5,19,8])
 		rotate(RIGHT)
 			color(CHROME)
-				cylinder(h = 9.3, r = 4.15, $fs=fine);
+				cylinder(h = 9.3, r = 4.15, $fs=FINE);
 }
 
 module composite_port ()
@@ -70,6 +71,7 @@ module composite_port ()
 
 module audio_jack ()
 	{
+
 	translate([LENGTH-26,WIDTH-11.5,HEIGHT])
 		{
 		color([.4,.4,.95])
@@ -77,7 +79,7 @@ module audio_jack ()
 				translate([6,11.5,10.1-(6.7/2)])
 					rotate([-90,0,0])
 						color([.4,.4,.95])
-							cylinder(h = 3.5, r = 6.7/2, $fs=.5);
+							cylinder(h = 3.5, r = 6.7/2, $fs=FINE);
 		}
 	}
 
