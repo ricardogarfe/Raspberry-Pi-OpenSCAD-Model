@@ -154,15 +154,12 @@ module power ()
 
 module sd_slot () {
 	slot_height = 5.2;
-
-	offset_x = 0.9;
-	offset_y = 15.2;
 	offset_z = (slot_height * NEGATIVE_FACTOR) + HEIGHT;
-
+	offset = [0.9, 15.2, offset_z];
 	dimensions = [16.8, 28.5, slot_height];
 
 	color (BLACK)
-		translate ([offset_x, offset_y, offset_z ])
+		translate (offset)
 			cube (dimensions);
 }
 
