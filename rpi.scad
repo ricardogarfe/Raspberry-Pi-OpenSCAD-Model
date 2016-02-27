@@ -153,6 +153,8 @@ module power ()
 module sd_slot () {
 	offset_x = 0.9;
 	offset_y = 15.2;
+	offset_z = 5.2 - HEIGHT;
+
 	dimensions = [16.8, 28.5, 5.2 - HEIGHT];
 
 	color (BLACK)
