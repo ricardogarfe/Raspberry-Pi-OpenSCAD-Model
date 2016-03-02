@@ -2,6 +2,7 @@ use <pin_headers.scad>;
 
 NEGATIVE_FACTOR = -1;
 FINE = .5;
+FINEST = .1;
 
 WIDTH = 56;
 LENGTH = 85;
@@ -171,8 +172,10 @@ module sd () {
     sd_card();
 }
 
+function twenty_per_cent (value) = value * .2;
+
 module mhole () {
-    cylinder (r=3/2, h=HEIGHT+.2, $fs=0.1);
+    cylinder (r=1.5, h=HEIGHT + twenty_per_cent(HEIGHT), $fs=FINEST);
 }
 
 module integrated_circuit() {
