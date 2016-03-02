@@ -205,22 +205,31 @@ module pcb () {
 }
 
 module leds() {
-    // act
-    color(RED)
-    translate([LENGTH-11.5,WIDTH-7.55,HEIGHT]) led();
-    // pwr
-    color(RED)
-    translate([LENGTH-9.45,WIDTH-7.55,HEIGHT]) led();
+    offset_y = WIDTH-7.55;
+    spacer = 2.05;
+    group_spacer = 2.9;
 
-    // fdx
-    color(RED)
-    translate([LENGTH-6.55,WIDTH-7.55,HEIGHT]) led();
-    // lnk
-    color(RED)
-    translate([LENGTH-4.5,WIDTH-7.55,HEIGHT]) led();
-    // 100
-    color(RED)
-    translate([LENGTH-2.45,WIDTH-7.55,HEIGHT]) led();
+        // act
+        color(RED)
+            translate([LENGTH-11.5, offset_y, HEIGHT])
+                led();
+        // pwr
+        color(RED)
+            translate([LENGTH-9.45, offset_y, HEIGHT])
+                led();
+
+        // fdx
+        color(RED)
+            translate([LENGTH-6.55, offset_y, HEIGHT])
+                led();
+        // lnk
+        color(RED)
+            translate([LENGTH-4.5, offset_y, HEIGHT])
+            led();
+        // 100
+        color(RED)
+            translate([LENGTH-2.45, offset_y, HEIGHT])
+                led();
 }
 
 module led() {
