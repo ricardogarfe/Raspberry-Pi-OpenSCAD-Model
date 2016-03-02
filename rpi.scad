@@ -208,14 +208,15 @@ module leds() {
     offset_y = WIDTH-7.55;
     spacer = 2.05;
     group_spacer = 2.9;
+    offset_x = LENGTH-11.5;
 
         // act
         color(RED)
-            translate([LENGTH-11.5, offset_y, HEIGHT])
+            translate([offset_x, offset_y, HEIGHT])
                 led();
         // pwr
         color(RED)
-            translate([LENGTH-9.45, offset_y, HEIGHT])
+            translate([offset_x + spacer, offset_y, HEIGHT])
                 led();
 
         // fdx
