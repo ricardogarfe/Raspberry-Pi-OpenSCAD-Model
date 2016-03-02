@@ -212,12 +212,10 @@ module leds() {
 
         // act
         color(RED)
-            translate([offset_x, offset_y, HEIGHT])
-                led();
+            postioned_led(offset_x);
         // pwr
         color(RED)
-            translate([offset_x + spacer, offset_y, HEIGHT])
-                led();
+            postioned_led(offset_x + spacer);
 
         // fdx
         color(RED)
@@ -231,6 +229,14 @@ module leds() {
         color(RED)
             translate([LENGTH-2.45, offset_y, HEIGHT])
                 led();
+}
+
+module postioned_led(offset_x) {
+    dimensions = [1.0,1.6,0.7];
+    offset_y = WIDTH-7.55;
+
+    translate([offset_x, offset_y, HEIGHT])
+        cube(dimensions);
 }
 
 module led() {
