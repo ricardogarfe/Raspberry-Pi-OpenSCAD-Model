@@ -1,6 +1,8 @@
 use <pin_headers.scad>;
 
 NEGATIVE_FACTOR = -1;
+ARRAY_BASE_CORRECTIION = -1;
+
 FINE = .5;
 FINEST = .1;
 
@@ -185,10 +187,13 @@ module integrated_circuit() {
 }
 
 module holes() {
-    translate ([25.5, 18,-0.1]) 
+    positions = [[25.5, 18,-0.1], [LENGTH-5, WIDTH-12.5, -0.1]];
+    number_of_holes = len(positions);
+
+    for (i = [0:number_of_holes + ARRAY_BASE_CORRECTIION]) {
+        translate (positions[i]) 
         mhole (); 
-    translate ([LENGTH-5, WIDTH-12.5, -0.1]) 
-        mhole ();
+    }
 }
 
 module pcb () {
