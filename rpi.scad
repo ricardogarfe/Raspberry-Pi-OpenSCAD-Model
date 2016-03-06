@@ -206,14 +206,6 @@ module pcb () {
     }
 }
 
-module first_led_group(offset_x) {
-    led_group(offset_x, 2);
-}
-
-module second_led_group(offset_x) {
-    led_group(offset_x, 3);
-}
-
 module led_group (offset_x, size) {
     offset = offset_x - SPACER;
     for (i=[1:size]) {
@@ -224,9 +216,9 @@ module led_group (offset_x, size) {
 module leds() {
     offset_x = LENGTH-11.5;
 
-    first_led_group(offset_x);
+    led_group(offset_x, 2);
     second_position = offset_x + SPACER + GROUP_SPACER;
-    second_led_group(second_position);
+    led_group(second_position, 3);
 }
 
 module postioned_led(offset_x) {
