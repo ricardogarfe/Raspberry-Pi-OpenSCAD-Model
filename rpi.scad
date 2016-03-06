@@ -9,6 +9,8 @@ FINEST = .1;
 WIDTH = 56;
 LENGTH = 85;
 HEIGHT = 1.5;
+SPACER = 2.05;
+GROUP_SPACER = 2.9;
 
 RIGHT = [90,0,0];
 LEFT = [-90,0,0];
@@ -205,16 +207,14 @@ module pcb () {
 }
 
 module first_led_group(offset_x) {
-    spacer = 2.05;
     color(RED)
         postioned_led(offset_x);
     // pwr
     color(RED)
-        postioned_led(offset_x + spacer);
+        postioned_led(offset_x + SPACER);
 }
 
 module second_led_group(offset_x) {
-    spacer = 2.05;
     offset_y = WIDTH-7.55;
 
     // fdx
@@ -222,19 +222,17 @@ module second_led_group(offset_x) {
         postioned_led(offset_x);
     // lnk
     color(RED)
-        postioned_led(offset_x + spacer);
+        postioned_led(offset_x + SPACER);
     // 100
     color(RED)
-        postioned_led(offset_x + (2 * spacer));
+        postioned_led(offset_x + (2 * SPACER));
 }
 
 module leds() {
-    spacer = 2.05;
-    group_spacer = 2.9;
     offset_x = LENGTH-11.5;
 
     first_led_group(offset_x);
-    second_position = offset_x + spacer + group_spacer;
+    second_position = offset_x + SPACER + GROUP_SPACER;
     second_led_group(second_position);
 }
 
