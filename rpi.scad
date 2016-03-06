@@ -209,7 +209,6 @@ module pcb () {
 module first_led_group(offset_x) {
     color(RED)
         postioned_led(offset_x);
-    // pwr
     color(RED)
         postioned_led(offset_x + SPACER);
 }
@@ -217,13 +216,10 @@ module first_led_group(offset_x) {
 module second_led_group(offset_x) {
     offset_y = WIDTH-7.55;
 
-    // fdx
     color(RED)
         postioned_led(offset_x);
-    // lnk
     color(RED)
         postioned_led(offset_x + SPACER);
-    // 100
     color(RED)
         postioned_led(offset_x + (2 * SPACER));
 }
