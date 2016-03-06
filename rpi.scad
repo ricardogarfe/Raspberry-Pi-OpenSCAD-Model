@@ -219,26 +219,23 @@ module second_led_group(offset_x) {
 
     // fdx
     color(RED)
-        translate([LENGTH-6.55, offset_y, HEIGHT])
-            led();
+        postioned_led(offset_x);
     // lnk
     color(RED)
-        translate([LENGTH-4.5, offset_y, HEIGHT])
-            led();
+        postioned_led(offset_x + spacer);
     // 100
     color(RED)
-        translate([LENGTH-2.45, offset_y, HEIGHT])
-            led();
+        postioned_led(offset_x + (2 * spacer));
 }
 
 module leds() {
-    offset_y = WIDTH-7.55;
     spacer = 2.05;
     group_spacer = 2.9;
     offset_x = LENGTH-11.5;
 
     first_led_group(offset_x);
-    second_led_group(offset_x + group_spacer);
+    second_position = offset_x + spacer + group_spacer;
+    second_led_group(second_position);
 }
 
 module postioned_led(offset_x) {
