@@ -207,21 +207,16 @@ module pcb () {
 }
 
 module first_led_group(offset_x) {
-    color(RED)
-        postioned_led(offset_x);
-    color(RED)
-        postioned_led(offset_x + SPACER);
+    postioned_led(offset_x);
+    postioned_led(offset_x + SPACER);
 }
 
 module second_led_group(offset_x) {
     offset_y = WIDTH-7.55;
 
-    color(RED)
-        postioned_led(offset_x);
-    color(RED)
-        postioned_led(offset_x + SPACER);
-    color(RED)
-        postioned_led(offset_x + (2 * SPACER));
+    postioned_led(offset_x);
+    postioned_led(offset_x + SPACER);
+    postioned_led(offset_x + (2 * SPACER));
 }
 
 module leds() {
@@ -237,7 +232,8 @@ module postioned_led(offset_x) {
     offset_y = WIDTH-7.55;
 
     translate([offset_x, offset_y, HEIGHT])
-        cube(dimensions);
+        color(RED)
+            cube(dimensions);
 }
 
 module led() {
